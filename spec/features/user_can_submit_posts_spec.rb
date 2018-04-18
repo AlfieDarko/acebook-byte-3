@@ -18,3 +18,14 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content '00:00 Tuesday 01-01-1991'
   end
 end
+
+RSpec.feature 'Timeline validation', type: :feature do
+  scenario 'Posts must have at least one character to submit' do
+    sign_up
+    visit '/posts'
+    click_link 'New post'
+    fill_in 'post[message]', with: ''
+    click_button 'Submit'
+    response.should render_template(:file => 'new')
+  end
+end
