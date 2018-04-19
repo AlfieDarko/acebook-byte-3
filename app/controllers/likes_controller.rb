@@ -12,7 +12,14 @@ class LikesController < ApplicationController
       @like.update_attribute(:on, true)
     end
 
-    redirect_to posts_url
+    respond_to do |format|
+      format.html { redirect_to posts_url }
+      format.js
+    end
+    # The app will respond to regular HTML requests by redirecting to the
+    # Posts index but will render a view when receiving a JS request. This view
+    # is located in views/likes/create.je.erb
+
   end
 
   private
