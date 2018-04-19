@@ -3,39 +3,39 @@
 <div id="news_deck">
   <div class='post_div'>
     <div class="post_user_div">
-      <%= image_tag @post.user.avatar.url(:thumb) %><br />
+      <%= image_tag @post.user.avatar.url(:thumb) %><br/>
       <strong>User:
       </strong>
       <%= @post.user.username %>
       <br>
       <div id='timestamp'>
-      <strong>Posted On:
-      </strong>
-      <%= @post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %>
-    </div>
+        <strong>Posted On:
+        </strong>
+        <%= @post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %>
+      </div>
     </div>
     <div class="parent_container_div">
       <div class="post_message_div">
-      <%= simple_format(@post.message) %>
-    </div>
-    <div id="post_like_count">
-      <div id="post_<%= @post.id %>_likes">
-        <strong>Likes:</strong>
-        <%= @post.likes.where(on: true).count %>
-        <!-- render partial: "likes", locals: {post: @post} -->
+        <%= simple_format(@post.message) %>
       </div>
-    </div>
+      <div id="post_like_count">
+        <div id="post_<%= @post.id %>_likes">
+          <strong>
+            <%= link_to "Likes", post_likes_path(@post, @like, user_id: current_user.id), method: :post, id: 'Like', value: current_user.id, remote: true %>:
+          </strong>
+          <%= render partial: 'likes/like', locals: {post: @post} %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- link_to "Like", post_likes_path(post, @like, user_id: current_user.id), method: :post, id: 'Like', value: current_user.id -->
 <div id="news_deck">
-<% if @post.user.id == current_user.id %>
-  <%= link_to 'Edit Post', edit_post_path(@post) %>
-<% end %>
-<br>
-<br>
+  <% if @post.user.id == current_user.id %>
+    <%= link_to 'Edit Post', edit_post_path(@post) %>
+  <% end %>
+  <br>
+  <br>
 </div>
 
 <h2 id="sub_heading">Comments</h2>
