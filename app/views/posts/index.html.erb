@@ -44,7 +44,7 @@
 
           <div id='like_count'>
             <strong>
-              <%= link_to "Likes", post_likes_path(post, @like, user_id: current_user.id), method: :post, id: 'Like', value: current_user.id, remote: true %>: 
+              <%= link_to "Likes", post_likes_path(post, @like, user_id: current_user.id), method: :post, id: "like_#{post.id}", value: current_user.id, remote: true %>:
             </strong>
             <%= render partial: 'likes/like', locals: {post: post} %>
           </div>

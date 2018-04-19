@@ -1,1 +1,5 @@
-$('#likes_span').replaceWith('<%= j(render partial: "likes/like", locals: {post: @post}) %>')
+$("a[id^='like_']").click(function() {
+  var id = parseInt(this.id.replace("like_", ""), 10);
+  var mySpan = $("#likes_span_" + id);
+  mySpan.html('<%= j(render partial: "likes/like", locals: {post: @post}) %>');
+});
