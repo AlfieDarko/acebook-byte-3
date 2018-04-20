@@ -1,3 +1,4 @@
+## MVP User Stories
 ```
 As a user,
 So that I can validate my self-worth,
@@ -36,9 +37,4 @@ I want to be able to sign up.
 As a user,
 So that I can control my account security,
 I want to be able to sign in and out.
-```
-
-### Nice-to-Haves User Stories
-```
-TBC
 ```
