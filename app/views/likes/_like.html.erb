@@ -1,1 +1,1 @@
-<span id='likes_span_<%=post.id%>'><%= post.likes.where(on: true, post_id: post.id).count %></span>
+<span id='likes_span_<%=post.id%>'><%= post.likes.where(on: true).count %></span>
