@@ -12,7 +12,7 @@ class LikesController < ApplicationController
       @like.update_attribute(:on, true)
     end
 
-    redirect_to posts_url
+    redirect_to @post
   end
 
   private
