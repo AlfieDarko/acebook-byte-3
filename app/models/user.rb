@@ -15,7 +15,7 @@ class User < ApplicationRecord
   has_many :personal_messages, dependent: :destroy
 
   def online?
-    !Redis.new(url: 'redis://:psqP3ZqrcFQwvSIZMomtYVoKwrS7Hvph@redis-13030.c16.us-east-1-3.ec2.cloud.redislabs.com:13030').get("user_#{id}_online").nil?
+    !Redis.new(url: ENV['REDIS_KEY']).get("user_#{id}_online").nil?
   end
 
   has_attached_file :avatar, styles: { medium: '250x250#', thumb: '100x100#' },

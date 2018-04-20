@@ -21,6 +21,6 @@ class AppearancesChannel < ApplicationCable::Channel
   private
 
   def redis
-    Redis.new
+    Redis.new(url: ENV['REDIS_KEY'])
   end
 end
