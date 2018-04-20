@@ -7,7 +7,10 @@ development:
 
 test:
   adapter: redis
-  url: redis://redis-13030.c16.us-east-1-3.ec2.cloud.redislabs.com:13030
+  host:
+  port: 13030
+  url: redis://:psqP3ZqrcFQwvSIZMomtYVoKwrS7Hvph@redis-13030.c16.us-east-1-3.ec2.cloud.redislabs.com:13030
+  password: psqP3ZqrcFQwvSIZMomtYVoKwrS7Hvph
 
 production:
   adapter: redis
