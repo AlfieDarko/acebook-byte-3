@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def index
+    @users = User.all
+  end
+
   def create
     @user = User.create(user_params)
   end
