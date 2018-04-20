@@ -77,5 +77,5 @@ SELECT * FROM <table_name> # Display all table contents
 * With the Chat function, there is no way to test the pop-up box function due to non-compatibility between Selenium WebDriver and Turbolinks. This is a known problem by the Shopify team.
 Selenium doesn't pick up the pop-up element.
 * Didn't have time to test Avatar upload function.
-* Didn't test the new line funciton in Posts.
+* Didn't test the new line function in Posts.
 * Issue with JavaScript / jQuery where the click event is not picking up the first time, thus preventing no-refresh update of Likes counter.

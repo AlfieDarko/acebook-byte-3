@@ -75,7 +75,7 @@ def second_user_add_post
   click_button 'Submit'
 end
 
-def both_users_signup_then_send_tom_msg(message)
+def users_signup_message(message)
   sign_up
   sign_out
   sign_up2
